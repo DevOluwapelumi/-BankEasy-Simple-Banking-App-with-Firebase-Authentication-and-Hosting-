@@ -23,4 +23,6 @@ Download the Simple Bank App from your app store or access it through our websit
 Sign up or log in securely using Firebase authentication.
 Start managing your accounts, tracking your transactions, and taking control of your finances.
 
+Don't wait any longer to take control of your finances. Try our Simple Bank App today and experience the convenience and security of Firebase authentication and hosting. Visit our GitHub repository to explore the source code and get involved in the development process. Your financial well-being is just a few clicks away!
+
 BankEasy is designed to simplify your banking experience and provide you with the tools you need to manage your finances effectively. Download our app today, and take control of your financial future with the power of Firebase authentication and hosting. Your banking has never been this easy, secure, and convenient.
