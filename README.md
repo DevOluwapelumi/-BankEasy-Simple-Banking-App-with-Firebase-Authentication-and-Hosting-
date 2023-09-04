@@ -1,6 +1,7 @@
 # -BankEasy-Simple-Banking-App-with-Firebase-Authentication-and-Hosting-
 BankEasy is the ultimate solution for hassle-free banking, providing you with a seamless and secure way to manage your finances. With Firebase authentication and hosting, we've taken the utmost care to ensure your banking experience is not only efficient but also safe and reliable.
 
+Are you looking for a hassle-free way to manage your finances and keep track of your transactions? Look no further! Our Simple Bank App, powered by Firebase authentication and hosting, is the perfect solution for your banking needs.
 
 Key Features:
 
