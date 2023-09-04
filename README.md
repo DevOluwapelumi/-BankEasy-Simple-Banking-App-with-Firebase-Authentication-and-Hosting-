@@ -18,5 +18,9 @@ Firebase Hosting: Our app is hosted on Firebase, ensuring high availability and 
 Open Source and GitHub Integration:
 We believe in transparency and collaboration. Our Simple Bank App is open-source and available on GitHub. You can access the source code, contribute to its development, or customize it to suit your specific needs.
 
+How to Get Started:
+Download the Simple Bank App from your app store or access it through our website.
+Sign up or log in securely using Firebase authentication.
+Start managing your accounts, tracking your transactions, and taking control of your finances.
 
 BankEasy is designed to simplify your banking experience and provide you with the tools you need to manage your finances effectively. Download our app today, and take control of your financial future with the power of Firebase authentication and hosting. Your banking has never been this easy, secure, and convenient.
