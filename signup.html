@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.css">
+</head>    
+<!-- <body style=" background: linear-gradient(to right,purple,pink,orange, #0c4655, #7fb3c0, black, red, yellow, green) "> -->
+<body style="background-image: url(./images/background.png); margin-top: 100px;">
+    <style>
+        @media (min-width:300px){
+            .box{
+                width: 400px !important;
+            }
+}
+    </style>
+    <!-- <marquee behavior="alternate" direction="right" style="color: rgb(41, 218, 25); font-size: x-large; font-style: italic;">TODO PRO MAX</marquee> -->
+            <div class="container box form-control shadow-lg rounded-5 col-3 mx-auto mt-5 w-25 fs-3 bg-warning"
+                <h1 style="text-align: center;color: black;"> <marquee behavior="alternate" direction="right"> Sign Up Page </marquee> </h1>
+                <label class="form-label" style="font-style: italic;"><b> First Name</label>
+                <input type="text" placeholder="Enter your Firstname" class="form-control my-2 px-2 fs-5"  style="border-radius: 10px" id="fn"> <br>
+                <label class="form-label" style="font-style: italic;"><b> Last Name</label>
+                <input type="text" placeholder="Enter your Lastname" class="form-control my-2 px-2 fs-5" style="border-radius: 10px;" id="ln"> <br>
+                <label class="form-label" style="font-style: italic;"><b> Email</label>
+                <input type="email" placeholder="Enter your Email" class="form-control my-2 px-2 fs-5" style="border-radius: 10px;" id="em"> <br>
+                <label class="form-label" style="font-style: italic;"><b> Password</label>
+                <input type="password" placeholder="Enter your Password" class="form-control my-2 px-2 fs-5" style="border-radius: 10px;" id="ps"> <br>
+                <div id="error"></div>
+
+                <button class="form-control btn btn-success my-2 w-50 " onclick="signUp()">Sign up</button> <br>
+                <input type="checkbox" onclick="log()">Already have an Account</input>
+            </div>
+            
+
+    
+    <script>
+        var userDe= []
+
+        if(localStorage.userIn){
+            var oldDatas = JSON.parse(localStorage.getItem('userIn'))
+            userDe = oldDatas
+           }
+           console.log(userDe)
+
+           function signUp(){
+            if(fn.value == "" || ln.value == "" || em.value == "" || ps.value == ""){
+                error.innerHTML = `<h5 class="ms-5">Please, fill in your Details correctly!!!</h5>`
+                error.style.color = 'red'
+            }else{
+                var eachDetails = {
+                    firstname: fn.value,
+                    lastname: ln.value,
+                    email: em.value,
+                    password: ps.value,
+                    toltalbal: 00
+                }
+
+                userDe.push(eachDetails)
+                localStorage.setItem('userIn', JSON.stringify(userDe))
+                console.log(userDe)
+                window.location.href = "signin.html"
+            }
+           }
+
+           function log(){
+            setTimeout(() => {
+                window.location.href = "signin.html"
+            }, 1000);
+           }
+
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

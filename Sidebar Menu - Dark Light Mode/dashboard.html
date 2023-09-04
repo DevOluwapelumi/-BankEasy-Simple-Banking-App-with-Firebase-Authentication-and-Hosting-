@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Todo</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2-dist/bootstrap-5.2.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./Sidebar Menu - Dark Light Mode/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body onload="dis()">
+
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo.png" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Codinglab</span>
+                    <span class="profession">Web developer</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Revenue</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Likes</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon' ></i>
+                            <span class="text nav-text">Wallets</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text">Dashboard Sidebar</div>
+    </section>
+
+   
+
+
+
+
+    <div class="container">
+        <div class="text-center mt-5 row">
+            <div class="container form-control bg-warning mt-5 fs-2 col-12 te border w-25 mx-auto pb-2 ">
+                <div id="div1" class=""></div>
+               <marquee behavior="" direction=""> <h1>Make your transaction here!!!</h1> </marquee> 
+                <div id="disp">
+
+                </div> <br>
+                <button class="btn btn-outline-success" onclick="depositBtn()">Deposit</button>
+                <button class="btn btn-outline-secondary" onclick="withdrawBtn()">Withdraw</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var emptyObject = []
+
+        var currentUserIndex = localStorage.getItem('curUser')
+
+        if (localStorage.userIn) {
+            var oldObjects = JSON.parse(localStorage.getItem('userIn'))
+            emptyObject = oldObjects
+        }
+        function dis() {
+            var name = emptyObject[currentUserIndex].firstname;
+            var bal = emptyObject[currentUserIndex].toltalbal;
+            div1.innerHTML = `
+            <h3 class="offset-8 fs-2">${name}</h3>
+            <h3 class="fs-3"> ₦ ${bal}</h3>
+            `
+        }
+        const depositBtn = () => {
+            var depAmt = prompt("Enter deposit your amount")
+       if(!depAmt){
+       alert("Please enter an amount")
+       } 
+       else {
+           var depositAmt = + Number(depAmt)
+           emptyObject[currentUserIndex].toltalbal += depositAmt
+           localStorage.setItem('userIn', JSON.stringify(emptyObject))
+           dis()
+           console.log(emptyObject)
+        }
+        }
+        const withdrawBtn = () => {
+            var bal = emptyObject[currentUserIndex].toltalbal;
+            var withAmt = prompt("Enter withdraw your amount")
+            if(!withAmt){
+       alert("Please enter an amount")
+       }  else if(withAmt>bal){
+       
+           alert("Insuficient funds")
+
+        } else {
+            var withdrawAmt = + Number(withAmt)
+            emptyObject[currentUserIndex].toltalbal -= withdrawAmt
+            localStorage.setItem('userIn', JSON.stringify(emptyObject))
+            dis()
+        }
+    }
+        function viewTodo() {
+            window.location.href = "TodoDash.html"
+        }
+    </script>
+
+<script src="script.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+
+</html>
