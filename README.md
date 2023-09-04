@@ -15,6 +15,8 @@ Card Management: Activate, freeze, or report lost or stolen cards instantly thro
 Real-Time Alerts: Stay informed about your account activity with real-time alerts. Receive notifications for large transactions, low balances, and more, so you're always in control.
 Firebase Hosting: Our app is hosted on Firebase, ensuring high availability and fast performance. Experience minimal downtime and speedy access to your banking services.
 
+Open Source and GitHub Integration:
+We believe in transparency and collaboration. Our Simple Bank App is open-source and available on GitHub. You can access the source code, contribute to its development, or customize it to suit your specific needs.
 
 
 BankEasy is designed to simplify your banking experience and provide you with the tools you need to manage your finances effectively. Download our app today, and take control of your financial future with the power of Firebase authentication and hosting. Your banking has never been this easy, secure, and convenient.
